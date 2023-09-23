@@ -1,0 +1,4 @@
+Hola, esto es una prueba
+Otra linea
+Información con acentos
+Nuevo texto
