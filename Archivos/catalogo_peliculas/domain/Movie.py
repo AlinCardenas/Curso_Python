@@ -13,4 +13,15 @@ class Movie:
 
 if __name__ == '__main__':
     pelicula = Movie('jfhjs')
-    print(pelicula)
+
+    n=5
+    dataList= []
+    var = []
+    newData=''
+    for num in range(1,n+1,1):
+        print(num, end='')
+
+
+
+
+
