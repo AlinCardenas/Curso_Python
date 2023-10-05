@@ -1,40 +1,50 @@
-from logger_base import log
-import psycopg2
 import sys
+
+from logger_base import log
+from psycopg2 import pool
 class Conection:
     _DATABASE = 'test_db'
     _USERNAME = 'postgres'
     _PASSWORD = 'admin'
     _DB_PORT = '5432'
     _HOST = '127.0.0.1'
-    _conection = None
-    _cursor = None
+    #Variables para pool de cohnexiones
+    _MIN_CONECTION = 1
+    _MAX_CONECTION = 5
+    _pool = None
+    @classmethod
+    def get_pool(cls):
+        if cls._pool is None:
+            try:
+                cls._pool = pool.SimpleConnectionPool(cls._MIN_CONECTION, cls._MAX_CONECTION, host=cls._HOST, user = cls._USERNAME, password = cls._PASSWORD, port=cls._DB_PORT, database=cls._DATABASE)
+                log.debug(f'Crecion de pool exitosa:{cls._pool}')
+                return cls._pool
+            except Exception as e:
+                log.error(f'Courrio error: {e}')
+                sys.exit()
+        else:
+            return cls._pool
 
     @classmethod
-    def create_conection(cls):
-        if cls._conection is None:
-            try:
-                cls._conection = psycopg2.connect(host=cls._HOST, user=cls._USERNAME, password=cls._PASSWORD, port=cls._DB_PORT, database=cls._DATABASE)
-                log.debug(f'Conexion exitosa {cls._conection}')
-                return cls._conection
-            except Exception as e:
-                log.error(f'Ocurrio un error en la conexión: {e}')
-                sys.exit()
-        else:
-            return cls._conection
+    def get_conection(cls):
+        conection = cls.get_pool().getconn()
+        log.debug(f'Conexion obtenida: {conection}')
+        return conection
+
     @classmethod
-    def get_cursor(cls):
-        if cls._cursor is None:
-            try:
-                cls._cursor = cls.create_conection().cursor()
-                log.debug(f'Se abrio el cursor: {cls._cursor}')
-                return cls._cursor
-            except Exception as e:
-                log.error(f'Ocurrio un error en obtener cursor: {e}')
-                sys.exit()
-        else:
-            return cls._cursor
+    def release_conection(cls, conection):
+        cls.get_pool().putconn(conection)
+        log.debug(f'Regresar conexion al pool: {conection}')
+
+    @classmethod
+    def close_connections(cls):
+        cls.get_pool().closeall()
 
 if __name__ == '__main__':
-    Conection.create_conection()
-    Conection.get_cursor()
+    conexion = Conection.get_conection()
+    Conection.release_conection(conexion)
+    conexion2 = Conection.get_conection()
+    conexion3 = Conection.get_conection()
+    conexion4 = Conection.get_conection()
+    conexion5 = Conection.get_conection()
+    conexion6 = Conection.get_conection()
