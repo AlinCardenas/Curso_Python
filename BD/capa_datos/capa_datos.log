@@ -1287,3 +1287,95 @@
             Apellido: Juarez
             Email: ricardo@gmail.com
         
+08:33:36 AM: DEBUG [CursorPool.py:9:] Inicio de metodo with __enter__
+08:33:36 AM: DEBUG [Conection.py:20:] Crecion de pool exitosa:<psycopg2.pool.SimpleConnectionPool object at 0x0000027ED939B090>
+08:33:36 AM: DEBUG [Conection.py:31:] Conexion obtenida: <connection object at 0x0000027ED92CE130; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+08:33:36 AM: DEBUG [CursorPool.py:15:] Ejecuta metodo exit
+08:33:36 AM: DEBUG [CursorPool.py:21:] Commit de transaccion
+08:33:36 AM: DEBUG [Conection.py:37:] Regresar conexion al pool: <connection object at 0x0000027ED92CE130; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 1
+            Nombre: Alin
+            Apellido: Cardenas
+            Email: alin@gmail.com
+
+        
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 2
+            Nombre: Jose
+            Apellido: Mora
+            Email: jose@gmail.com
+
+        
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 3
+            Nombre: Luis
+            Apellido: Ramirez
+            Email: luis@gmail.com
+        
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 4
+            Nombre: Carlos
+            Apellido: Juarez
+            Email: juan @gmail.com
+        
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 5
+            Nombre: Juan Carlos
+            Apellido: Juarez
+            Email: juan @gmail.com
+        
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 6
+            Nombre: Oliver
+            Apellido: Cardona
+            Email: oliver@gmail.com
+        
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 7
+            Nombre: Fernando
+            Apellido: Ramirez
+            Email: fernando@gmail.com
+        
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 10
+            Nombre: Rosa
+            Apellido: Cerillo
+            Email: rosa@gmail.com
+        
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 11
+            Nombre: Carla
+            Apellido: Cerillo
+            Email: rosa@gmail.com
+        
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 12
+            Nombre: Rocio
+            Apellido: Juarez
+            Email: rocio@gmail.com
+        
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 13
+            Nombre: Roberto
+            Apellido: Juarez
+            Email: roberto@gmail.com
+        
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 14
+            Nombre: Roberto
+            Apellido: Juarez
+            Email: roberto@gmail.com
+        
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 15
+            Nombre: Rocio
+            Apellido: Mora
+            Email: rocio@gmail.com
+        
+08:33:36 AM: DEBUG [PersonDao.py:58:] 
+            Id: 18
+            Nombre: Ricardo
+            Apellido: Juarez
+            Email: ricardo@gmail.com
+        

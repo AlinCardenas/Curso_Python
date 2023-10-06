@@ -37,7 +37,8 @@ class Person:
         return self._email
     @email.setter
     def email(self, email):
-        self._email= email
+        self._email = email
+
 if __name__ == '__main__':
     persona = Person(1, 'Juan', 'Gonzalez', 'juan@gmail.com')
     log.debug(persona)
